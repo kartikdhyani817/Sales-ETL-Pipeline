@@ -1,0 +1,11 @@
+OrderID,CustomerName,Product,Category,Quantity,Price,OrderDate,City
+1001,Alice,Laptop,Electronics,1,70000,2026-01-01,Delhi
+1002,Bob,Mouse,Electronics,2,800,2026-01-02,Mumbai
+1003,Charlie,Keyboard,Electronics,1,1500,2026-01-03,Pune
+1004,David,Chair,Furniture,3,4500,2026-01-04,Delhi
+1005,Eva,Desk,Furniture,1,8500,2026-01-05,Bangalore
+1006,Frank,Monitor,Electronics,2,12000,2026-01-06,Noida
+1007,Grace,Tablet,Electronics,1,28000,2026-01-07,Hyderabad
+1008,Henry,Phone,Electronics,2,55000,2026-01-08,Chennai
+1009,Ivy,Printer,Electronics,1,9000,2026-01-09,Kolkata
+1010,Jack,Speaker,Electronics,2,4000,2026-01-10,Delhi
