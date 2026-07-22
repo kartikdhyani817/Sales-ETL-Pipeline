@@ -1,17 +1,26 @@
 from scripts.ingest import load_data
+from scripts.clean import clean_data
+from scripts.save import save_data
+from scripts.report import generate_report
+
 from utils.logger import logger
 
 
 def main():
-    print("Pipeline started...")
 
-    file_path = "data/raw/sales_data.csv"
-    df = load_data(file_path)
+    print("Pipeline Started...\n")
 
-    print("\nSales data loaded successfully:\n")
-    print(df.to_string(index=False))
+    df = load_data("data/raw/sales_data.csv")
 
-    logger.info("Pipeline executed successfully")
+    df = clean_data(df)
+
+    generate_report(df)
+
+    save_data(df)
+
+    print(df)
+
+    logger.info("Pipeline completed successfully")
 
 
 if __name__ == "__main__":
