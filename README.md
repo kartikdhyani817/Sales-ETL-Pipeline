@@ -2,20 +2,24 @@
 
 An end-to-end Data Engineering project that demonstrates how raw sales data is extracted, validated, transformed, and loaded into a structured database using Python and MySQL.
 
-> 🚧 This project is being developed incrementally over 10 days to simulate a real-world production ETL workflow.
+> 🚧 This project is being built incrementally over 10 days to simulate a production-ready ETL workflow.
 
 ---
 
 ## Project Overview
 
-The Sales ETL Pipeline automates the process of handling sales data by:
+The Sales ETL Pipeline automates the processing of retail sales data through a modular ETL architecture.
+
+The pipeline performs:
 
 - Extracting raw sales data from CSV files
 - Validating data quality and schema
-- Cleaning and transforming records
-- Loading processed data into MySQL
-- Generating logs for monitoring and debugging
-- Creating a maintainable and modular ETL architecture
+- Cleaning missing values
+- Removing duplicate records
+- Transforming and enriching data
+- Generating data quality reports
+- Saving processed data in Parquet format
+- Preparing data for MySQL loading
 
 ---
 
@@ -38,20 +42,36 @@ The Sales ETL Pipeline automates the process of handling sales data by:
 Sales_ETL_Pipeline/
 │
 ├── config/
+│   └── database.py
+│
 ├── data/
 │   ├── raw/
+│   │   └── sales_data.csv
 │   ├── processed/
+│   │   └── clean_sales.parquet
 │   └── archive/
+│
 ├── logs/
+│
 ├── output/
+│
 ├── scripts/
 │   ├── ingest.py
-│   └── validate.py
-├── sql/
+│   ├── validate.py
+│   ├── clean.py
+│   ├── report.py
+│   ├── save.py
+│   └── load_mysql.py
+│
 ├── utils/
 │   └── logger.py
+│
+├── sql/
+│
 ├── main.py
 ├── requirements.txt
+├── .gitignore
+├── .env (local only)
 └── README.md
 ```
 
@@ -60,52 +80,110 @@ Sales_ETL_Pipeline/
 ## ETL Workflow
 
 ```
-Raw CSV Data
-      │
-      ▼
-Data Validation
-      │
-      ▼
-Data Cleaning & Transformation
-      │
-      ▼
-Processed Dataset
-      │
-      ▼
-MySQL Database
-      │
-      ▼
-SQL Analytics
+Raw CSV
+    │
+    ▼
+Validation
+    │
+    ▼
+Data Cleaning
+    │
+    ▼
+Data Transformation
+    │
+    ▼
+Quality Report
+    │
+    ▼
+Parquet File
+    │
+    ▼
+MySQL Database (In Progress)
 ```
 
 ---
 
-## Current Progress
+## Features Implemented
 
-### ✅ Day 1
+### Day 1
 
 - Project structure created
 - Virtual environment configured
 - Required dependencies installed
-- Sample sales dataset added
-- Logging module implemented
+- CSV ingestion module developed
 - Data validation module created
-- CSV ingestion pipeline completed
+- Logging system implemented
+- Modular ETL architecture established
+
+---
+
+### Day 2
+
+- Duplicate record removal
+- Missing value handling
+- Data type conversion
+- Feature engineering (`TotalAmount`)
+- Data quality report generation
+- Export cleaned data to Parquet
+- Improved logging and modularization
+
+---
+
+### Day 3 (Current Progress)
+
+- MySQL database integration initiated
+- Environment variable configuration using `.env`
+- SQLAlchemy database connection implemented
+- MySQL loading module created
+- Database connectivity under testing
+
+> Final MySQL loading will be completed after database authentication is configured.
+
+---
+
+## Sample Dataset
+
+The project processes retail sales records containing:
+
+- Order ID
+- Customer Name
+- Product
+- Category
+- Quantity
+- Price
+- Order Date
+- City
+
+The pipeline automatically cleans and enriches the dataset before loading it into the database.
+
+---
+
+## Current Pipeline Output
+
+The pipeline currently:
+
+- Reads raw sales CSV
+- Validates dataset structure
+- Removes duplicate records
+- Handles missing values
+- Converts data types
+- Generates TotalAmount column
+- Produces a data quality report
+- Saves processed data as Parquet
+- Prepares data for database loading
 
 ---
 
 ## Upcoming Features
 
-- Data Cleaning
-- Missing Value Handling
-- Duplicate Removal
-- Data Transformation
-- MySQL Integration
-- Incremental Loading
-- SQL Reporting
-- Data Quality Checks
-- Error Handling
-- Production Logging
+- Complete MySQL data loading
+- Incremental loading
+- SQL analytics queries
+- Error handling improvements
+- Configurable pipeline settings
+- Scheduling support
+- Automated reporting
+- Performance optimization
 
 ---
 
@@ -129,7 +207,7 @@ Create a virtual environment:
 python -m venv venv
 ```
 
-Activate it (Windows):
+Activate the environment (Windows):
 
 ```bash
 venv\Scripts\activate
@@ -141,7 +219,7 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Run the project:
+Run the pipeline:
 
 ```bash
 python main.py
@@ -155,12 +233,26 @@ This project demonstrates practical Data Engineering concepts including:
 
 - ETL Pipeline Design
 - Data Validation
+- Data Cleaning
 - Data Transformation
+- Feature Engineering
 - Logging
-- Python Project Structure
-- Database Integration
-- SQL
-- Modular Programming
+- Modular Python Development
+- SQLAlchemy
+- MySQL Integration
+- Environment Variable Management
+- Production-style Project Structure
+
+---
+
+## Future Enhancements
+
+- Airflow Scheduling
+- Docker Deployment
+- Cloud Storage Integration
+- Data Warehouse Support
+- Automated Monitoring
+- Incremental ETL Processing
 
 ---
 
@@ -174,4 +266,4 @@ Aspiring Data Engineer | Python | SQL | Data Analytics | ETL Pipelines
 
 ## License
 
-This project is created for learning and portfolio purposes.
+This project is licensed under the MIT License.
