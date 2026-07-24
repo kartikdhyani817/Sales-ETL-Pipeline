@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS sales_etl;
+
+USE sales_etl;
+
+SHOW TABLES;
+
+SELECT * FROM sales;
+
+SELECT COUNT(*) FROM sales;
