@@ -1,14 +1,16 @@
 from scripts.ingest import load_data
 from scripts.clean import clean_data
-from scripts.save import save_data
 from scripts.report import generate_report
-
+from scripts.save import save_data
+from scripts.load_mysql import test_connection, load_to_mysql
 from utils.logger import logger
 
 
 def main():
 
     print("Pipeline Started...\n")
+
+    test_connection()
 
     df = load_data("data/raw/sales_data.csv")
 
@@ -18,9 +20,11 @@ def main():
 
     save_data(df)
 
-    print(df)
+    load_to_mysql(df)
 
-    logger.info("Pipeline completed successfully")
+    print("\nPipeline Completed Successfully.")
+
+    logger.info("Pipeline Completed")
 
 
 if __name__ == "__main__":
