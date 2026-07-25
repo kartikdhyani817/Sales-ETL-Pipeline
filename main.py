@@ -4,6 +4,8 @@ from scripts.report import generate_report
 from scripts.save import save_data
 from scripts.load_mysql import test_connection, load_to_mysql
 from utils.logger import logger
+from scripts.analytics import run_analytics
+from scripts.business_report import generate_business_report
 
 
 def main():
@@ -21,6 +23,10 @@ def main():
     save_data(df)
 
     load_to_mysql(df)
+
+    results = run_analytics()
+
+    generate_business_report(results)
 
     print("\nPipeline Completed Successfully.")
 
