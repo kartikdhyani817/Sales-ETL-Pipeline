@@ -1,0 +1,41 @@
+SALES BUSINESS REPORT
+========================================
+
+Total Sales
+------------------------------
+   value
+274100.0
+
+Total Orders
+------------------------------
+ value
+    10
+
+Average Order Value
+------------------------------
+  value
+27410.0
+
+Top Selling Product
+------------------------------
+Product  TotalSold
+  Chair        3.0
+
+Sales By Category
+------------------------------
+   Category  Revenue
+Electronics 252100.0
+  Furniture  22000.0
+
+Sales By City
+------------------------------
+     City  Revenue
+  Chennai 110000.0
+    Delhi  91500.0
+Hyderabad  28000.0
+  Unknown  24000.0
+  Kolkata   9000.0
+Bangalore   8500.0
+   Mumbai   1600.0
+     Pune   1500.0
+
