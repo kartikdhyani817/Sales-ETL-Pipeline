@@ -6,6 +6,7 @@ from scripts.load_mysql import test_connection, load_to_mysql
 from utils.logger import logger
 from scripts.analytics import run_analytics
 from scripts.business_report import generate_business_report
+from scripts.charts import generate_charts
 
 
 def main():
@@ -27,6 +28,8 @@ def main():
     results = run_analytics()
 
     generate_business_report(results)
+
+    generate_charts()
 
     print("\nPipeline Completed Successfully.")
 
