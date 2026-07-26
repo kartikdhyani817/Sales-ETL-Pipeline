@@ -1,8 +1,8 @@
 # Sales ETL Pipeline
 
-An end-to-end Data Engineering project that demonstrates how raw sales data is extracted, validated, transformed, loaded into MySQL, and analyzed using SQL to generate automated business reports.
+An end-to-end Data Engineering project that demonstrates how raw sales data is extracted, validated, transformed, loaded into MySQL, analyzed using SQL, and visualized through automated charts.
 
-> 🚀 Built as a hands-on Data Engineering portfolio project using Python, Pandas, MySQL, SQLAlchemy, and SQL Analytics.
+> 🚀 A production-style ETL pipeline built using Python, Pandas, MySQL, SQLAlchemy, SQL, and Matplotlib.
 
 ---
 
@@ -21,7 +21,8 @@ The pipeline performs:
 - Save processed data as Parquet
 - Load cleaned data into MySQL
 - Execute SQL analytics
-- Generate an automated business report
+- Generate automated business reports
+- Create visual analytics dashboards
 
 ---
 
@@ -32,9 +33,10 @@ The pipeline performs:
 - MySQL
 - SQLAlchemy
 - MySQL Connector
-- PyArrow
-- Python Dotenv
 - SQL
+- PyArrow
+- Matplotlib
+- Python Dotenv
 - VS Code
 
 ---
@@ -57,11 +59,18 @@ Sales_ETL_Pipeline/
 ├── logs/
 │
 ├── output/
-│   └── business_report.txt
+│   ├── business_report.txt
+│   └── charts/
+│       ├── Dashboard.png
+│       ├── Monthly_Sales.png
+│       ├── Revenue_Category.png
+│       ├── Revenue_City.png
+│       └── Top_Products.png
 │
 ├── scripts/
 │   ├── analytics.py
 │   ├── business_report.py
+│   ├── charts.py
 │   ├── clean.py
 │   ├── ingest.py
 │   ├── load_mysql.py
@@ -111,6 +120,9 @@ SQL Analytics
     │
     ▼
 Business Report
+    │
+    ▼
+Charts & Dashboard
 ```
 
 ---
@@ -119,10 +131,10 @@ Business Report
 
 ## Day 1
 
-- Modular project structure
+- Project setup
 - CSV ingestion
 - Data validation
-- Logging
+- Logging system
 - Modular ETL architecture
 
 ---
@@ -133,18 +145,18 @@ Business Report
 - Missing value handling
 - Data type conversion
 - Feature engineering
-- Parquet export
 - Data quality reporting
+- Export to Parquet
 
 ---
 
 ## Day 3
 
 - MySQL integration
-- SQLAlchemy database connection
+- SQLAlchemy connection
 - Environment variable management
 - Automatic table creation
-- Load cleaned data into MySQL
+- Load transformed data into MySQL
 
 ---
 
@@ -154,9 +166,21 @@ Business Report
 - Business KPI generation
 - Automated business report
 - Revenue analysis
-- Product performance analysis
-- Category-wise sales analysis
-- City-wise sales analysis
+- Category analysis
+- City analysis
+- Product analysis
+
+---
+
+## Day 5
+
+- Automated chart generation
+- Revenue by category visualization
+- Revenue by city visualization
+- Top-selling products chart
+- Monthly revenue trend analysis
+- Dashboard summary generation
+- Automatic chart export as PNG files
 
 ---
 
@@ -170,23 +194,52 @@ The pipeline automatically calculates:
 - Top Selling Product
 - Revenue by Category
 - Revenue by City
+- Monthly Revenue Trend
 
-These insights are generated directly from the MySQL database using SQL queries.
+---
+
+# Visual Analytics Generated
+
+The pipeline automatically creates the following charts:
+
+- Revenue by Category
+- Revenue by City
+- Top 5 Selling Products
+- Monthly Sales Trend
+- Dashboard Summary
+
+All charts are saved automatically inside the `output/charts/` directory.
 
 ---
 
 # Output Files
 
-### Processed Dataset
+## Processed Dataset
 
 ```
 data/processed/clean_sales.parquet
 ```
 
-### Business Report
+## Business Report
 
 ```
 output/business_report.txt
+```
+
+## Dashboard Charts
+
+```
+output/charts/
+
+Dashboard.png
+
+Monthly_Sales.png
+
+Revenue_Category.png
+
+Revenue_City.png
+
+Top_Products.png
 ```
 
 ---
@@ -204,19 +257,27 @@ output/business_report.txt
 
 ---
 
+# Data Visualization
+
+The project uses **Matplotlib** to generate automated business charts directly from SQL query results, making it easy to visualize key performance indicators and sales trends without manual intervention.
+
+---
+
 # Learning Objectives
 
 This project demonstrates practical Data Engineering concepts including:
 
 - ETL Pipeline Development
 - Data Cleaning
-- Feature Engineering
 - Data Validation
-- Logging
-- SQLAlchemy
-- MySQL Integration
+- Feature Engineering
 - SQL Analytics
-- Business KPI Reporting
+- MySQL Integration
+- SQLAlchemy
+- Automated Reporting
+- Data Visualization
+- Business KPI Analysis
+- Logging
 - Modular Python Development
 - Production-style Project Structure
 
@@ -224,15 +285,14 @@ This project demonstrates practical Data Engineering concepts including:
 
 # Future Enhancements
 
-- Interactive Dashboards
-- Data Visualization using Matplotlib
+- Interactive Streamlit Dashboard
 - Incremental ETL Loading
 - Airflow Scheduling
 - Docker Deployment
 - Cloud Storage Integration
 - Data Warehouse Support
-- Automated Monitoring
-- Email Report Delivery
+- Email Report Automation
+- Monitoring & Alerting
 
 ---
 
@@ -268,7 +328,7 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Configure your `.env` file with MySQL credentials.
+Configure the `.env` file with your MySQL credentials.
 
 Run the pipeline:
 
