@@ -1,4 +1,4 @@
-# Sales ETL Pipeline
+ # Sales ETL Pipeline
 
 An end-to-end Data Engineering project that demonstrates how raw sales data is extracted, validated, transformed, loaded into MySQL, analyzed using SQL, and visualized through automated charts.
 
