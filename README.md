@@ -1,5 +1,5 @@
 # 📊 Sales ETL Pipeline
-
+mm
 An end-to-end Data Engineering project that automates the complete ETL (Extract, Transform, Load) workflow using Python, MySQL, SQLAlchemy, Pandas and Streamlit.
 
 The project ingests raw sales data, validates and cleans it, performs feature engineering, stores processed data in MySQL, generates business reports, creates visual analytics, and provides an interactive dashboard for business users.
